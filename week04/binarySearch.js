@@ -1,15 +1,15 @@
 /* JavaScript */
-// let left = 0,
-//   right = len(array) - 1
-// while (left <= right) {
-//   let mid = (left + right) >> 1
-//   if (array[mid] === target) {
-//     /*find the target*/
-//     ;
-//     return
-//   } else if (array[mid] < target) left = mid + 1
-//   else right = mid - 1
-// }
+let left = 0,
+  right = len(array) - 1
+while (left <= right) {
+  let mid = (left + right) >> 1
+  if (array[mid] === target) {
+    /*find the target*/ ;
+    return
+  } else if (array[mid] < target) left = mid + 1
+  else right = mid - 1
+}
+
 
 const binarySorted2 = (arr) => {
   let c = new Date().getTime();
@@ -25,7 +25,7 @@ const binarySorted2 = (arr) => {
     }
   }
   let d = new Date().getTime();
-  console.log(d-c)
+  console.log(d - c)
   return binarySorted(left).concat([mid], binarySorted(right));
 }
 // console.log(binarySorted([4, 1, 23, 5, 7, 3, 4, 6, 8]))
