@@ -70,7 +70,7 @@ maxHeap.insert(5);
 maxHeap.insert(3);
 
 maxHeap.printHeap();
-maxHeap.delete(5);
+maxHeap.delete(0);
 maxHeap.printHeap();
 maxHeap.delete(2);
 maxHeap.printHeap();

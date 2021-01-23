@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <meta charset="utf-8"> 
+  <title>菜鸟教程(runoob.com)</title> 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    div {
+      margin: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 0;
+      margin-left: -30px;
+      background-color: rgb(208, 212, 212);
+      width: 230px;
+    }
+
+    li {
+      cursor: pointer;
+    }
+
+    input {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <input type="text" id="autocom" placeholder="autocomplete输入框">
+    <ul id="match"></ul>
+  </div>
+  <script>
+    //input输入框，实现在数组arr查询命中词和autocomplete效果
+    var arr = ['a', 'apple', 'abandon', 'bilibili', 'beep', 'before', 'become', 'being', 'highmaintains', 'by', 'bye',
+      'banana'
+    ]
+    document.getElementById("autocom").addEventListener('input', (event) => {
+      var v1 = event.target.value.trim()
+      if (v1) {
+        autoFunc(v1, arr)
+      } else {
+        document.getElementById('match').innerHTML = ''
+      }
+    })
+    //判断是否匹配并显示在li中
+    function autoFunc(str, arr) {
+      var list = []
+      arr.map((item) => {
+        if (item.startsWith(str, 0))
+          list.push('<li>' + item + '</li>')
+      })
+      document.getElementById('match').innerHTML = list.join('')
+    }
+    //将匹配的选项添加到输入框中
+    function addToInput(li) {
+      autocom.value = li.innerText
+    }
+    document.getElementById('match').addEventListener('click', (event) => {
+      if (event.target.tagName.toLowerCase() === 'li') {
+        addToInput(event.target)
+        document.getElementById('match').innerHTML = ''
+      }
+    })
+  </script>
+</body>
+
+</html>
