@@ -51,3 +51,6 @@ var getLeastNumbers = function (arr, k) {
 
   return arr.slice(0, k);
 };
+
+let arr = [9, 12, 4, 6, 2, 3, 56, 78, 12, 5, 2, 5, 6, 8, 3, 1, 3]
+console.log(getLeastNumbers(arr, 4))
